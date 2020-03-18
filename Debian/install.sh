@@ -22,17 +22,13 @@
 # 
 
 # find selected Distro
-if [[ $CHOICE = Wheezy* ]]; then
-	printf "Selected Release: %s\n" "Wheezy"
+
+if [[ $CHOICE = Bullseye* ]]; then
+	printf "Selected Release: %s\n" "Bullseye"
 	# find selected flavour
 	if [[ $CHOICE = *CLI* ]]; then
 		printf "Selected Flavour: %s\n" "CLI"
-		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-wheezy-cli-latest.img.xz
-		exit $?
-	fi
-	if [[ $CHOICE = *XFCE* ]]; then
-		printf "Selected Flavour: %s\n" "XFCE"
-		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-wheezy-xfce-latest.img.xz
+		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX8/Debian/sr-imx8-debian-bullseye-20191201-cli.tar.xz
 		exit $?
 	fi
 

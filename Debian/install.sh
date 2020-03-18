@@ -23,31 +23,12 @@
 
 # find selected Distro
 
-if [[ $CHOICE = Bullseye* ]]; then
-	printf "Selected Release: %s\n" "Bullseye"
+if [[ $CHOICE = Buster* ]]; then
+	printf "Selected Release: %s\n" "Buster"
 	# find selected flavour
 	if [[ $CHOICE = *CLI* ]]; then
 		printf "Selected Flavour: %s\n" "CLI"
-		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX8/Debian/sr-imx8-debian-bullseye-20191201-cli.tar.xz
-		exit $?
-	fi
-
-	# unknown flavour
-	printf "Selected Flavour: %s\n" "Unknown"
-	exit 1
-fi
-if [[ $CHOICE = Jessie* ]]; then
-	printf "Selected Release: %s\n" "Jessie"
-	# find selected flavour
-	if [[ $CHOICE = *CLI* ]]; then
-		printf "Selected Flavour: %s\n" "CLI"
-		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-jessie-cli-latest.img.xz
-		exit $?
-	fi
-
-	if [[ $CHOICE = *Mate* ]]; then
-		printf "Selected Flavour: %s\n" "XFCE"
-		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-jessie-mate-latest.img.xz
+		$SHELL $(dirname $0)/ignition2.sh /dev/mmcblk0 https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-buster-20191020-cli.img.xz
 		exit $?
 	fi
 

@@ -22,7 +22,5 @@
 # 
 
 cat > /tmp/list.out << EOF
-Bullseye CLI
-Jessie CLI
-Jessie Desktop Mate
+Buster CLI
 EOF
